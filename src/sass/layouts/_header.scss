@@ -1,0 +1,28 @@
+header{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: white;
+    
+    img{
+        height: 100%;
+        width: auto;
+        margin: 20px auto 15px auto;
+        z-index: -1;
+
+        @include tablet-only{
+            margin: 25px auto
+        }
+    }    
+}
+
+.header--homepage{
+    @include tablet-only{
+        text-align: left;
+        margin: auto auto 15px auto;
+
+        img{
+            margin: 20px 5% 15px 5%;
+        }
+    }
+}

@@ -1,0 +1,176 @@
+.location-selector{
+    width: 100%;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0px 2.5px 4px rgb(209, 209, 209);
+    background-color: darken($bkg-secondary, 5%);
+    
+    i{
+        margin: auto 20px;
+        color: $font-dark;
+        font-size: 17px;
+
+        @include tablet-only{
+            margin: auto 10px auto 0px;
+        }
+    }
+
+    input{
+        background-color: darken($bkg-secondary, 5%);
+        font-weight: 600;
+        color: $font-dark;
+        border: none;
+        outline: none;
+        width: 40%;
+        font-size: 1.1rem;
+
+        @include tablet-only{
+            width: 50%;
+            font-size: 1rem;
+        }
+    }
+
+    @include tablet-only{
+        padding: 10px 0px;
+        width: 240px;
+        position: absolute;
+        right: 5%;
+        top: 16px;
+        border-radius: 50px;
+    }
+}
+
+#hero{
+    @include desktop-only{
+        display: flex;
+        width: 90%;
+        margin: 10px auto 50px auto;
+    }
+}
+
+#intro{
+    background-color: $bkg-secondary;
+    text-align: center;
+    padding: 0px 0px 55px 0px;
+
+    h1{
+        margin: 0px;
+        padding: 40px 0px;
+    }
+
+    &__text{
+        color: $font-dark;
+        margin: 0px;
+
+        @include desktop-only{
+            font-size: 1.2rem;
+        }
+    }
+
+    @include tablet-only{
+        width: 90%;
+        margin: 0px auto 10px auto;
+        border-radius: 15px;
+    }
+
+    @include desktop-only{
+        min-width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.how-it-works{
+    width: 90%;
+    margin: auto;
+    padding: 20px 0px 30px 0px;
+
+    h1{
+        min-width: 100%;
+    }
+
+    @include tablet-only{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        h1{
+            margin: 20px 0px 20px 20px;
+            text-align: center;
+        }
+    }
+
+    @include desktop-only{
+        margin: 0px 5%;
+
+        h1{
+            margin: 20px;
+        }
+    }
+
+    &__card{
+        width: auto;
+        display: flex;
+        background-color: $bkg-secondary;
+        @include drop-shadow(#dddddd);
+        border-radius: 15px;
+        margin: 20px 0px 20px 3%;
+        padding: 2px 25px 2px 30px;
+        align-items: center;
+        position: relative;
+
+        h4{
+            position: absolute;
+            left: -10px;
+            background-color: $color-primary;
+            color: #fff;
+            font-weight: 400;
+            padding: 2px 7px;
+            border-radius: 50px;
+        }
+
+        i{
+            width: 6px;
+            color: $font-dark;
+        }
+
+        p{
+            margin: 17px 0px;
+            padding: 0px 30px;
+            font-weight: 600;
+        }
+
+        @include tablet-only{
+            width: 22%;
+        }
+
+        @include desktop-only{
+            width: 100%;
+        }
+
+        &--highlighted{
+            background-color: lighten($color-primary, 35%);
+
+            i{
+                color: $color-primary;
+            }
+        }
+
+    }
+}
+
+.restaurant-section{
+    background-color: $bkg-secondary;
+    padding: 30px 0px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    h1{
+        width: 90%;
+        margin: 0px auto 20px auto;
+    }
+}
