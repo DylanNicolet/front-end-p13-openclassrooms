@@ -43,10 +43,6 @@
           animation-delay: 2.5s;
 }
 
-body {
-  background-color: blue;
-}
-
 body h1 {
   font-size: 1.5rem;
 }
@@ -172,81 +168,6 @@ body p {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
     opacity: 1;
-  }
-}
-
-header {
-  width: 100%;
-  text-align: center;
-  position: relative;
-  background-color: white;
-}
-
-header img {
-  height: 100%;
-  width: auto;
-  margin: 20px auto 15px auto;
-  z-index: -1;
-}
-
-@media only screen and (min-width: 768px) {
-  header img {
-    margin: 25px auto;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .header--homepage {
-    text-align: left;
-    margin: auto auto 15px auto;
-  }
-  .header--homepage img {
-    margin: 20px 5% 15px 5%;
-  }
-}
-
-footer {
-  background-color: #494949;
-  padding: 25px;
-}
-
-footer h2 {
-  font-size: 20px;
-  margin: 0px;
-  color: white;
-  font-family: "Shrikhand", cursive;
-  font-weight: 400;
-}
-
-footer p {
-  color: white;
-  margin: 0px;
-}
-
-footer i {
-  color: white;
-  margin: 0px 10px 0px 0px;
-  width: 17px;
-}
-
-footer a {
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 7px 0px;
-}
-
-@media only screen and (min-width: 1260px) {
-  footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
   }
 }
 
