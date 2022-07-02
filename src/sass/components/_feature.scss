@@ -1,0 +1,31 @@
+.features-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+
+    @include desktop-only{
+        flex-direction: row;
+    }
+}
+
+.feature{
+    width: 80%;
+    margin: 0 auto 70px auto;
+    text-align: center;
+
+    @include desktop-only{
+        width: 25%;
+    }
+
+    &__icon{
+        width: 150px;
+        border: 10px solid $color-primary;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+
+    &__title{
+        font-size: 1.25rem;
+    }
+}
+
