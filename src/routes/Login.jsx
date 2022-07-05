@@ -1,7 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import Counter from "../components/Counter";
+import { useSelector, useDispatch } from "react-redux";
+import { updateUserName, updatePassword, updateRememberMe } from "../redux/formSlice";
 
 /**
  * Component to render the Login page with a login form
@@ -13,28 +14,18 @@ import Counter from "../components/Counter";
  * ) 
  */
 export default function Login(){
-    const [formData, setFormData] = React.useState(
-        {
-            userName: "",
-            password: "",
-            rememberMe: false
-        }
-    )
-
-    function handleChange(event) {
-        const {name, value, type, checked} = event.target
-        setFormData(prevFormData => {
-            return {
-                ...prevFormData,
-                [name]: type === "checkbox" ? checked : value
-            }
-        })
-    }
+    //Redux states
+    const userName = useSelector((state) => state.form.userName)
+    const password = useSelector((state) => state.form.password)
+    const rememberMe = useSelector((state) => state.form.rememberMe)
+    const dispatch = useDispatch()
 
     function handleSubmit(event) {
         event.preventDefault()
+        console.log("username: " + userName)
+        console.log("password: " + password)
+        console.log("rememberMe?: " + rememberMe)
         //submit to API here
-        console.log(formData)
     }
 
     return(
@@ -46,31 +37,30 @@ export default function Login(){
                 <input 
                     name="userName"
                     type="text"
-                    onChange={handleChange}
-                    value={formData.userName}
+                    onChange={e => dispatch(updateUserName(e.target.value))}
+                    value={userName}
                     className="text-input"
                 />
                 <label htmlFor="password">Password</label>
                 <input 
                     name="password"
                     type="text"
-                    onChange={handleChange}
-                    value={formData.password}
+                    onChange={e => dispatch(updatePassword(e.target.value))}
+                    value={password}
                     className="text-input"
                 />
                 <section className="rememberMe">
                     <input 
                         type="checkbox"
                         id="rememberMe"
-                        checked={formData.rememberMe}
-                        onChange={handleChange}
+                        checked={rememberMe}
+                        onChange={e => dispatch(updateRememberMe(!rememberMe))}
                         name="rememberMe"
                     />
                     <label htmlFor="rememberMe">Remember me</label>
                 </section>
                 <button onClick={handleSubmit}>Sign In</button>
             </form>
-            <Counter />
         </section>
     )
 }
