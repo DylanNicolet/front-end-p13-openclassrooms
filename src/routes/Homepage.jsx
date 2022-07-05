@@ -4,6 +4,15 @@ import iconChat from "../images/icon-chat.png";
 import iconMoney from "../images/icon-money.png";
 import iconSecurity from "../images/icon-security.png";
 
+/**
+ * Component to render the Homepage
+ * 
+ * @component
+ * @example
+ * @returns (
+ *  <Homepage />
+ * ) 
+ */
 export default function Homepage(){
     const chatText = "Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes."
     const moneyText= "The more you save with us, the higher your interest rate will be!"

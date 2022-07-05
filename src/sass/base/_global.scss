@@ -6,8 +6,14 @@
 
 body{
     margin: 0;
+    
+    background-color: #12002b;
 }
 
 main{
     width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

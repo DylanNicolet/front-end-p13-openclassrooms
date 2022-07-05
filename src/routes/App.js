@@ -6,8 +6,10 @@ import Footer from "../layouts/Footer";
 function App() {
   return (
     <main>
-      <Header />
-      <Outlet />
+      <section>
+        <Header />
+        <Outlet />
+      </section>
       <Footer />
     </main>
   );
