@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUserName, updatePassword, updateRememberMe } from "../redux/formSlice";
+import axios from "axios";
 
 /**
  * Component to render the Login page with a login form
@@ -22,10 +23,16 @@ export default function Login(){
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log("username: " + userName)
-        console.log("password: " + password)
-        console.log("rememberMe?: " + rememberMe)
-        //submit to API here
+        axios.post('localhost:3001/api/v1/user/login', {
+            'email': 'tony@stark.com',
+            'password': '$2b$12$t5VN8HM.2yL5oWVGXcqfoemhP0Y5yLli7X1fw53f6Ea03NQfuM0.W'
+        })
+        .then(function (response) {
+            console.log(response)
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
     }
 
     return(
