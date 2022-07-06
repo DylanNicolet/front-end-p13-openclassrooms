@@ -243,6 +243,51 @@ body p {
   font-size: 1.25rem;
 }
 
+.info-card {
+  background-color: white;
+  width: 85%;
+  margin: 30px auto;
+  text-align: left;
+  padding-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.info-card__content {
+  width: 85%;
+  margin: auto;
+}
+
+.info-card__title {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.info-card__balance {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.info-card__balance-type {
+  margin: 0;
+}
+
+.info-card__button {
+  width: 85%;
+  margin: 20px auto;
+  height: 35px;
+  background-color: #00bc77;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -412,5 +457,21 @@ footer p {
   width: 100%;
   height: 35px;
   margin-bottom: 10px;
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile__title {
+  color: white;
+}
+
+.button-edit-name {
+  background-color: #00bc77;
+  color: white;
+  height: 35px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 /*# sourceMappingURL=App.css.map */

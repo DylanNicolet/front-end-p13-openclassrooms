@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const formSlice = createSlice({
-    name: 'form',
+export const userDataSlice = createSlice({
+    name: 'userData',
     initialState:{
         userName: "",
         password: "",
         rememberMe: false,
+        userToken: "",
     },
     reducers:{
         updateUserName: (state, action) => {
@@ -17,9 +18,12 @@ export const formSlice = createSlice({
         updateRememberMe: (state, action) => {
             state.rememberMe = action.payload
         },
+        updateUserToken: (state, action) => {
+            state.userToken = action.payload
+        },
     },
 })
 
-export const {updateUserName, updatePassword, updateRememberMe} = formSlice.actions
+export const {updateUserName, updatePassword, updateRememberMe, updateUserToken} = userDataSlice.actions
 
-export default formSlice.reducer
+export default userDataSlice.reducer

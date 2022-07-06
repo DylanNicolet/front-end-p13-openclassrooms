@@ -2,8 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
-import { updateUserName, updatePassword, updateRememberMe } from "../redux/formSlice";
-import axios from "axios";
+import { updateUserName, updatePassword, updateRememberMe, updateUserToken } from "../redux/userDataSlice";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Component to render the Login page with a login form
@@ -16,21 +16,35 @@ import axios from "axios";
  */
 export default function Login(){
     //Redux states
-    const userName = useSelector((state) => state.form.userName)
-    const password = useSelector((state) => state.form.password)
-    const rememberMe = useSelector((state) => state.form.rememberMe)
+    const userName = useSelector((state) => state.userData.userName)
+    const password = useSelector((state) => state.userData.password)
+    const rememberMe = useSelector((state) => state.userData.rememberMe)
     const dispatch = useDispatch()
 
+    let navigate = useNavigate()
+
+    //Function for API call on user identification
     function handleSubmit(event) {
         event.preventDefault()
-        axios.post('localhost:3001/api/v1/user/login', {
-            'email': 'tony@stark.com',
-            'password': '$2b$12$t5VN8HM.2yL5oWVGXcqfoemhP0Y5yLli7X1fw53f6Ea03NQfuM0.W'
+        fetch('http://localhost:3001/api/v1/user/login', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: userName,
+                password: password,
+            })
         })
-        .then(function (response) {
-            console.log(response)
+        .then(response => response.json())
+        .then(data => {
+            dispatch(updateUserToken(data.body.token))
+            if(data.status === 200){
+                navigate("/profile")
+            }
         })
-        .catch(function (error) {
+        .catch(error => {
             console.log(error)
         })
     }

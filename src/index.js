@@ -6,6 +6,7 @@ import Homepage from './routes/Homepage';
 import Login from './routes/Login';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import Profile from './routes/Profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
           <Route path="/" element={<App />}>
             <Route path='/' element={<Homepage />} />
             <Route path="login" element={<Login />} />
+            <Route path='profile' element={<Profile/>} />
           </Route>
         </Routes>
       </BrowserRouter>
