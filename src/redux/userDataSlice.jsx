@@ -7,6 +7,8 @@ export const userDataSlice = createSlice({
         password: "",
         rememberMe: false,
         userToken: "",
+        firstName: "",
+        lastName: "",
     },
     reducers:{
         updateUserName: (state, action) => {
@@ -21,9 +23,15 @@ export const userDataSlice = createSlice({
         updateUserToken: (state, action) => {
             state.userToken = action.payload
         },
+        updateFirstName: (state, action) => {
+            state.firstName = action.payload
+        },
+        updateLastName: (state, action) => {
+            state.lastName = action.payload
+        }
     },
 })
 
-export const {updateUserName, updatePassword, updateRememberMe, updateUserToken} = userDataSlice.actions
+export const {updateUserName, updatePassword, updateRememberMe, updateUserToken, updateFirstName, updateLastName} = userDataSlice.actions
 
 export default userDataSlice.reducer

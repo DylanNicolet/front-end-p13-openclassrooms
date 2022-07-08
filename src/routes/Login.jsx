@@ -39,8 +39,8 @@ export default function Login(){
         })
         .then(response => response.json())
         .then(data => {
-            dispatch(updateUserToken(data.body.token))
             if(data.status === 200){
+                dispatch(updateUserToken(data.body.token))
                 navigate("/profile")
             }
         })
@@ -60,7 +60,7 @@ export default function Login(){
                     type="text"
                     onChange={e => dispatch(updateUserName(e.target.value))}
                     value={userName}
-                    className="text-input"
+                    className={"text-input"} //add conditional rendering here for background color
                 />
                 <label htmlFor="password">Password</label>
                 <input 
