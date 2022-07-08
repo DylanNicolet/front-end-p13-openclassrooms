@@ -258,9 +258,25 @@ body p {
           flex-direction: column;
 }
 
+@media only screen and (min-width: 920px) {
+  .info-card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .info-card__content {
   width: 85%;
   margin: auto;
+}
+
+@media only screen and (min-width: 920px) {
+  .info-card__content {
+    width: 300px;
+    margin: auto 0 20px 30px;
+  }
 }
 
 .info-card__title {
@@ -286,6 +302,13 @@ body p {
   color: white;
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+@media only screen and (min-width: 920px) {
+  .info-card__button {
+    width: 200px;
+    margin: auto 30px auto auto;
+  }
 }
 
 .modal__container {

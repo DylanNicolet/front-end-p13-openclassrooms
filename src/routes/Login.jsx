@@ -60,7 +60,7 @@ export default function Login(){
                     type="text"
                     onChange={e => dispatch(updateUserName(e.target.value))}
                     value={userName}
-                    className={"text-input"} //add conditional rendering here for background color
+                    className={"text-input"}
                 />
                 <label htmlFor="password">Password</label>
                 <input 
