@@ -41,7 +41,7 @@ export default function Header(){
     return(
         <header>
             <img src={logo} alt="" />
-            <section className={location.pathname !== "/profile" && "header__content"}>
+            <section className={location.pathname !== "/profile"? "header__content" : undefined}>
                 <section className="icon-with-name">
                     <FontAwesomeIcon icon={faUserCircle} className="header__icon"/>
                     {location.pathname === "/profile" && <p>{firstName}</p>}

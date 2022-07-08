@@ -1,0 +1,39 @@
+.modal__container{
+    position: fixed;
+    background-color: rgba(173, 173, 173, 0.837);
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    background-color: white;
+
+    input{
+        width: 85%;
+        margin: 10px auto;
+        height: 30px;
+    }
+
+    button{
+        width: 85%;
+        height: 30px;
+        border: none;
+        background-color: $color-primary;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 20px auto 0px auto;
+        cursor: pointer;
+    }
+}
+
