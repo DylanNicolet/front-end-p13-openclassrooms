@@ -12,13 +12,35 @@ header{
         color: $color-secondary;
         background-color: transparent;
         border: none;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 600;
         margin-right: 10px;
     }
 }
 
+.header__content{
+    display: flex;
+}
+
 .header__icon{
     font-size: 20px;
     color: $color-secondary;
+}
+
+.icon-with-name{
+    display: flex;
+    align-items: center;
+
+    p{
+        font-size: 1rem;
+        font-weight: 600;
+        margin-left: 7px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
+
+.sign-out{
+    margin-bottom: 3px;
+    cursor: pointer;
 }

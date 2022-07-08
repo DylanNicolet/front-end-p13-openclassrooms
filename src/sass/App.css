@@ -307,14 +307,42 @@ header button {
   color: #2c3e50;
   background-color: transparent;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-right: 10px;
+}
+
+.header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header__icon {
   font-size: 20px;
   color: #2c3e50;
+}
+
+.icon-with-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icon-with-name p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 7px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.sign-out {
+  margin-bottom: 3px;
+  cursor: pointer;
 }
 
 footer {
