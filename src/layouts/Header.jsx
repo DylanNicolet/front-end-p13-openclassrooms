@@ -10,7 +10,6 @@ import { updateUserToken, updateUserName, updatePassword, updateFirstName, updat
  * Display a header for the whole app
  * 
  * @component
- * @example
  * @returns (
  *  <Header />
  * ) 
@@ -41,7 +40,7 @@ export default function Header(){
     return(
         <header>
             <img src={logo} alt="" />
-            <section className={location.pathname !== "/profile"? "header__content" : undefined}>
+            <section className={location.pathname !== "/profile"? "header__content--profile" : "header__content--no-profile"}>
                 <section className="icon-with-name">
                     <FontAwesomeIcon icon={faUserCircle} className="header__icon"/>
                     {location.pathname === "/profile" && <p>{firstName}</p>}

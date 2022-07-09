@@ -378,10 +378,21 @@ header button {
   margin-right: 10px;
 }
 
-.header__content {
+.header__content--profile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (min-width: 920px) {
+  .header__content--no-profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .header__icon {
@@ -409,6 +420,12 @@ header button {
 .sign-out {
   margin-bottom: 3px;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 920px) {
+  .sign-out {
+    margin: 0 0 0 15px;
+  }
 }
 
 footer {

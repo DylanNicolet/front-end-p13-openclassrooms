@@ -18,8 +18,16 @@ header{
     }
 }
 
-.header__content{
+.header__content--profile{
     display: flex;
+}
+
+.header__content--no-profile{
+    @include desktop-only{
+        display: flex;
+        align-items: center;
+
+    }
 }
 
 .header__icon{
@@ -43,4 +51,8 @@ header{
 .sign-out{
     margin-bottom: 3px;
     cursor: pointer;
+
+    @include desktop-only{
+        margin: 0 0 0 15px;
+    }
 }
