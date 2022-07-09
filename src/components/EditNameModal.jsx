@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateModalStatus } from "../redux/userDataSlice";
 
 export default function EditNameModal(){
-    const [newFirstName, setNewFirstName] = React.useState("")
-    const [newLastName, setNewLastName] = React.useState("")
+    
     const userToken = useSelector((state) => state.userData.userToken)
+    const firstName = useSelector((state) => state.userData.firstName)
+    const lastName = useSelector((state) => state.userData.lastName)
     const dispatch = useDispatch()
+    const [newFirstName, setNewFirstName] = React.useState(firstName)
+    const [newLastName, setNewLastName] = React.useState(lastName)
 
     function handleConfirm(event){
         event.preventDefault()
@@ -37,13 +40,11 @@ export default function EditNameModal(){
     }
 
     return(
-        <section className="modal__container">
-            <form className="modal__form">
-                <input type="text" onChange={e => setNewFirstName(e.target.value)} value={newFirstName} placeholder="First Name" />
-                <input type="text" onChange={e => setNewLastName(e.target.value)} value={newLastName} placeholder = "Last Name" />
-                <button onClick={handleConfirm}>Confirm</button>
-                <button onClick={handleCancel}>Cancel</button>
-            </form>
-        </section>
+        <form className="modal__form">
+            <input type="text" onChange={e => setNewFirstName(e.target.value)} value={newFirstName} />
+            <input type="text" onChange={e => setNewLastName(e.target.value)} value={newLastName} />
+            <button onClick={handleConfirm}>Save</button>
+            <button onClick={handleCancel}>Cancel</button>
+        </form>
     )
 }

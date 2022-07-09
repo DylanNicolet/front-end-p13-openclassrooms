@@ -311,57 +311,47 @@ body p {
   }
 }
 
-.modal__container {
-  position: fixed;
-  background-color: rgba(173, 173, 173, 0.837);
-  top: 0px;
-  width: 100vw;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.modal__form {
+  width: 300px;
+  margin: auto;
 }
 
-.modal__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 300px;
-  height: 300px;
-  margin: auto;
-  background-color: white;
+@media only screen and (min-width: 920px) {
+  .modal__form {
+    width: 400px;
+  }
 }
 
 .modal__form input {
   width: 85%;
   margin: 10px auto;
   height: 30px;
+  padding-left: 10px;
+}
+
+@media only screen and (min-width: 920px) {
+  .modal__form input {
+    width: 40%;
+    margin: 10px 5px;
+  }
 }
 
 .modal__form button {
-  width: 85%;
+  width: 40%;
   height: 30px;
-  border: none;
-  background-color: #00bc77;
-  color: white;
+  border: 1px solid #00bc77;
+  color: #00bc77;
   font-size: 1.1rem;
   font-weight: bold;
-  margin: 20px auto 0px auto;
+  margin: 10px 5px;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 920px) {
+  .modal__form button {
+    width: 25%;
+    margin: 0 5px;
+  }
 }
 
 header {
@@ -565,10 +555,12 @@ footer p {
 
 .profile {
   text-align: center;
+  margin-top: 25px;
 }
 
 .profile__title {
   color: white;
+  margin: 2px auto;
 }
 
 .button-edit-name {
@@ -577,5 +569,6 @@ footer p {
   height: 35px;
   padding-left: 7px;
   padding-right: 7px;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=App.css.map */

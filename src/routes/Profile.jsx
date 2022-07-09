@@ -36,9 +36,10 @@ export default function Profile(){
 
     return(
         <section className="profile">
+            <h1 className="profile__title">Welcome back</h1>
+            {!modalStatus && <h1 className="profile__title">{firstName + " " +  lastName}!</h1>}
             {modalStatus && <EditNameModal />}
-            <h1 className="profile__title">Welcome back <br /> {firstName + " " +  lastName}! </h1>
-            <button className="button-edit-name" onClick={handleEditName}>Edit Name</button>
+            {!modalStatus && <button className="button-edit-name" onClick={handleEditName}>Edit Name</button>}
             <InfoCard title="Argent Bank Checking (x8349)" balance="2,082.79" balanceType="Available Balance" />
             <InfoCard title="Argent Bank Savings (x6712)" balance="10,948.22" balanceType="Available Balance" />
             <InfoCard title="Argent Bank Credit Card (x8349)" balance="184.30" balanceType="Current Balance" />
