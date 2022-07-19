@@ -1,0 +1,133 @@
+swagger: "2.0"
+info:
+  description: "Contains all proposed end-points for the account transactions"
+  version: "1.0.0"
+  title: "Bank Argent proposed API documentation"
+host: "localhost:3001"
+basePath: "/api/v1"
+schemes:
+- "http"
+paths:
+  /user/transaction:
+    post:
+      tags:
+      - "User"
+      summary: "User account transactions API"
+      description: "Returns transaction history for current month of the specified account type"
+      operationId: "accessTransaction"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "header"
+        name: "Authorization"
+        description: "Attach Bearer JWT Token"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Account Payload, Define the account type. (ex: checking, savings, credit_card) "
+        required: true
+        schema:
+          $ref: "#/definitions/account"
+      responses:
+        "200":
+          description: "Request successfull"
+          schema:
+            $ref: "#/definitions/accountResponse"
+        "400":
+          description: "Invalid Fields"
+        "500":
+          description: "Internal Server Error"
+    put:
+      tags:
+      - "User"
+      summary: "Update additional information of the transaction"
+      description: ""
+      operationId: "updateTransaction"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "header"
+        name: "Authorization"
+        description: "Attach Bearer JWT Token"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Which information to update on which transaction"
+        required: true
+        schema:
+          $ref: "#/definitions/updateTransaction"
+      responses:
+        "200":
+          description: "Transaction retrieved successfully"
+          schema:
+            $ref: "#/definitions/updateResponse"
+        "400":
+          description: "Invalid Fields"
+        "500":
+          description: "Internal server Error"
+definitions:
+  account:
+    type: "object"
+    properties:
+      accountType:
+        type: "string"
+  accountResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+      message:
+        type: "string"
+      body:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            transactionId:
+              type: "integer"
+            date:
+              type: "string"
+            description:
+              type: "string"
+            amount: 
+              type:  "integer"
+            balance:
+              type: "integer"
+            transactionType:
+              type: "string"
+            category:
+              type: "string"
+            notes:
+              type: "string"
+  updateTransaction:
+    type: "object"
+    properties:
+      transactionId:
+        type: "integer"
+      category:
+        type: "string"
+      notes:
+        type: "string"
+  updateResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+      message:
+        type: "string"
+      body:
+        type: "object"
+        properties:
+          transactionId:
+            type: "integer"
+          category:
+            type: "string"
+          notes:
+            type: "string"
