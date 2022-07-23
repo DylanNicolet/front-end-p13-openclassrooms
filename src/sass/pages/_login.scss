@@ -1,0 +1,51 @@
+.login__page{
+    padding-top: 40px;
+}
+
+.login__form{
+    padding: 2rem;
+    width: 300px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    label{
+        align-self: flex-start;
+        font-weight: 600;
+    }
+
+    button{
+        width: 100%;
+        height: 35px;
+        color: white;
+        text-decoration: underline;
+        font-size: 1.1rem;
+        background-color: $color-primary;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+.rememberMe{
+    align-self: flex-start;
+    margin: 0 0 10px 0;
+
+    label{
+        font-weight: 500;
+    }
+
+    input{
+        cursor: pointer;
+    }
+}
+
+.text-input{
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+}

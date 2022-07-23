@@ -1,0 +1,53 @@
+.info-card{
+    background-color: white;
+    width: 85%;
+    margin: 30px auto;
+    text-align: left;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+
+    @include desktop-only{
+        flex-direction: row;
+    }
+
+    &__content{
+        width: 85%;
+        margin: auto;
+
+        @include desktop-only{
+            width: 300px;
+            margin: auto 0 20px 30px;
+        }
+    }
+
+    &__title{
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    &__balance{
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    &__balance-type{
+        margin: 0;
+    }
+}
+
+.info-card__button{
+    width: 85%;
+    margin: 20px auto;
+    height: 35px;
+    background-color: $color-primary;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    @include desktop-only{
+        width: 200px;
+        margin: auto 30px auto auto;
+    }
+}

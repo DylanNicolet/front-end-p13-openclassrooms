@@ -1,0 +1,36 @@
+.modal__form{
+    width: 300px;
+    margin: auto;
+    @include desktop-only{
+        width: 400px;
+    }
+
+    input{
+        width: 85%;
+        margin: 10px auto;
+        height: 30px;
+        padding-left: 10px;
+
+        @include desktop-only{
+            width: 40%;
+            margin: 10px 5px;
+        }
+    }
+
+    button{
+        width: 40%;
+        height: 30px;
+        border: 1px solid $color-primary;
+        color: $color-primary;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 10px 5px;
+        cursor: pointer;
+
+        @include desktop-only{
+            width: 25%;
+            margin: 0 5px;
+        }
+    }
+}
+

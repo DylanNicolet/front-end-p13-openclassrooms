@@ -1,35 +1,12 @@
 footer{
-    background-color: $bkg-footer;
-    padding: 25px;
-
-    h2{
-        font-size: 20px;
-        margin: 0px;
-        color: white;
-        font-family: $title-font;
-        font-weight: 400;
-    }
+    border-top: 2px solid #ccc;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 
     p{
-        color: white;
-        margin: 0px;
-    }
-
-    i{
-        color: white;
-        margin: 0px 10px 0px 0px;
-        width: 17px;
-    }
-
-    a{
-        color: white;
-        display: flex;
-        align-items: center;
-        margin: 7px 0px;
-    }
-
-    @include desktop-only{
-        display: flex;
-        justify-content: space-around;
+        margin: 0;
     }
 }

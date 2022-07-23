@@ -1,0 +1,19 @@
+.profile{
+    text-align: center;
+    margin-top: 25px;
+
+    &__title{
+        color: white;
+        margin: 2px auto;
+    }
+}
+
+.button-edit-name{
+    background-color: $color-primary;
+    color: white;
+    height: 35px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-top: 20px;
+    cursor: pointer;
+}

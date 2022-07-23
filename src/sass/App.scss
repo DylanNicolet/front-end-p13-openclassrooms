@@ -7,9 +7,14 @@
 @import "./base/typography";
 @import "./base/keyframes";
 
-//components here
+@import "./components/feature";
+@import "./components/info-card";
+@import "./components/edit-name-modal";
+
 
 @import "./layouts/header";
 @import "./layouts/footer";
 
 @import "./pages/homepage";
+@import "./pages/login";
+@import "./pages/profile";
