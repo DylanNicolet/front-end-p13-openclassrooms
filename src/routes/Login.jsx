@@ -5,17 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateUserName, updatePassword, updateRememberMe, updateUserToken } from "../redux/userDataSlice";
 import { useNavigate } from "react-router-dom";
 
-/**
- * Component to render the Login page with a login form
- * 
- * @component
- * @example
- * @returns (
- *  <Login />
- * ) 
- */
+//Component to render the Login page with a login form
 export default function Login(){
-    //Redux states
     const userName = useSelector((state) => state.userData.userName)
     const password = useSelector((state) => state.userData.password)
     const rememberMe = useSelector((state) => state.userData.rememberMe)

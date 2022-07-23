@@ -1,14 +1,6 @@
 import React from "react";
 
-/**
- * Display a footer for the whole app
- * 
- * @component
- * @example
- * @returns (
- *  <Footer />
- * ) 
- */
+//Component to display a footer for the whole app
 export default function Footer(){
     return(
         <footer>

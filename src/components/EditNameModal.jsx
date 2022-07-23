@@ -2,15 +2,18 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateModalStatus } from "../redux/userDataSlice";
 
+//Component for updating first name and last name on the user profile
 export default function EditNameModal(){
     
     const userToken = useSelector((state) => state.userData.userToken)
     const firstName = useSelector((state) => state.userData.firstName)
     const lastName = useSelector((state) => state.userData.lastName)
     const dispatch = useDispatch()
+
     const [newFirstName, setNewFirstName] = React.useState(firstName)
     const [newLastName, setNewLastName] = React.useState(lastName)
 
+    //Function for sending PUT API request and alter the database 
     function handleConfirm(event){
         event.preventDefault()
 

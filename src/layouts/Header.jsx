@@ -6,14 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUserToken, updateUserName, updatePassword, updateFirstName, updateLastName } from "../redux/userDataSlice";
 
-/**
- * Display a header for the whole app
- * 
- * @component
- * @returns (
- *  <Header />
- * ) 
- */
+//Component to display header for the whole app
 export default function Header(){
     const firstName = useSelector((state) => state.userData.firstName)
     const rememberMe = useSelector((state => state.userData.rememberMe))
